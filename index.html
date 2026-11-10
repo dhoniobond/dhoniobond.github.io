@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dhanush Srinath — Data &amp; Analytics Engineer</title>
+<meta name="description" content="Dhanush Srinath is a Data & Analytics Engineer in New York building data models, pipelines and BI that people trust. Databricks, PostgreSQL, PySpark, Power BI.">
+<meta property="og:title" content="Dhanush Srinath — Data & Analytics Engineer">
+<meta property="og:description" content="Data models, pipelines and BI that people trust. Currently Data Engineer (R&D) at Kenvue.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f1b2d'/%3E%3Ctext x='32' y='43' font-family='Arial' font-weight='700' font-size='30' text-anchor='middle' fill='%23f5b841'%3EDS%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f5f0; --surface:#ffffff; --surface-2:#efece4; --ink:#0f1b2d; --muted:#5a6475;
+  --line:#dedad0; --accent:#b7791f; --accent-ink:#ffffff; --accent-soft:#fbf1dc; --blue:#1f4fd8;
+  --shadow:0 1px 2px rgba(15,27,45,.05),0 8px 24px rgba(15,27,45,.06);
+  --sans:"Inter Tight",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0b1220; --surface:#121b2d; --surface-2:#18233a; --ink:#eef1f6; --muted:#9aa5b8;
+  --line:#243049; --accent:#f5b841; --accent-ink:#0b1220; --accent-soft:#2a2414; --blue:#7ea2ff;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+}}
+:root[data-theme="dark"]{
+  --bg:#0b1220; --surface:#121b2d; --surface-2:#18233a; --ink:#eef1f6; --muted:#9aa5b8;
+  --line:#243049; --accent:#f5b841; --accent-ink:#0b1220; --accent-soft:#2a2414; --blue:#7ea2ff;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.mono{font-family:var(--mono);font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+
+/* nav */
+header.nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.brand{font-weight:800;text-decoration:none;letter-spacing:-.01em}
+.brand span{color:var(--accent)}
+.nav nav{display:flex;gap:22px;align-items:center}
+.nav nav a{text-decoration:none;font-size:.92rem;color:var(--muted);font-weight:500}
+.nav nav a:hover{color:var(--ink)}
+#theme{border:1px solid var(--line);background:var(--surface);color:var(--ink);width:36px;height:36px;border-radius:10px;cursor:pointer;font-size:1rem}
+@media (max-width:720px){.nav nav a{display:none}}
+
+/* hero */
+.hero{padding:84px 0 56px;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(2.5rem,6vw,4.2rem);line-height:1.02;letter-spacing:-.035em;margin:14px 0 20px;font-weight:800}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p.lede{font-size:1.18rem;color:var(--muted);max-width:34em;margin:0 0 28px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:12px;text-decoration:none;font-weight:600;font-size:.96rem;border:1px solid var(--line);background:var(--surface);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.btn.primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.now{display:inline-flex;align-items:center;gap:10px;padding:6px 14px 6px 10px;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-size:.86rem;font-weight:500}
+.dot{width:8px;height:8px;border-radius:50%;background:#2fb170;box-shadow:0 0 0 4px rgba(47,177,112,.18)}
+.pipe{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:var(--shadow)}
+.pipe svg{width:100%;height:auto;display:block}
+.pipe text{font-family:var(--mono);font-size:11px;fill:var(--ink)}
+.pipe .lab{fill:var(--muted);font-size:9.5px;letter-spacing:.06em}
+.pipe rect.n{fill:var(--surface-2);stroke:var(--line)}
+.pipe rect.hi{fill:var(--accent-soft);stroke:var(--accent)}
+.pipe path.flow{stroke:var(--accent);stroke-width:1.6;fill:none;stroke-dasharray:4 5;animation:dash 1.6s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-18}}
+@media (prefers-reduced-motion:reduce){.pipe path.flow{animation:none}html{scroll-behavior:auto}}
+@media (max-width:860px){.hero{grid-template-columns:1fr;padding:56px 0 40px}}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:18px;background:var(--surface);overflow:hidden}
+.stat{padding:22px 24px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat b{display:block;font-size:1.9rem;letter-spacing:-.03em;line-height:1.1}
+.stat span{color:var(--muted);font-size:.88rem}
+@media (max-width:860px){.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+
+/* sections */
+section{padding:72px 0 0}
+.head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:28px;flex-wrap:wrap}
+h2{font-size:clamp(1.7rem,3.4vw,2.3rem);letter-spacing:-.03em;margin:6px 0 0;line-height:1.1}
+h3{font-size:1.15rem;letter-spacing:-.01em;margin:0 0 8px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+@media (max-width:860px){.grid3,.grid2{grid-template-columns:1fr}}
+.card p{margin:0;color:var(--muted);font-size:.96rem}
+.num{font-family:var(--mono);color:var(--accent);font-size:.8rem;margin-bottom:14px;display:block}
+
+/* case studies */
+.case{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;padding:32px}
+.case + .case{margin-top:18px}
+.case ul{margin:14px 0 0;padding-left:18px;color:var(--muted);font-size:.96rem}
+.case li{margin-bottom:6px}
+.case .viz{background:var(--surface-2);border-radius:14px;padding:18px}
+.case .viz svg{width:100%;height:auto;display:block}
+.case .viz text{font-family:var(--mono);font-size:11px;fill:var(--ink)}
+.case .viz .lab{fill:var(--muted);font-size:9.5px}
+.case .viz rect{fill:var(--surface);stroke:var(--line)}
+.case .viz rect.hi{fill:var(--accent-soft);stroke:var(--accent)}
+.case .viz line,.case .viz path{stroke:var(--muted);stroke-width:1.2;fill:none}
+@media (max-width:860px){.case{grid-template-columns:1fr;padding:24px}}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.tag{font-family:var(--mono);font-size:.72rem;padding:4px 9px;border-radius:7px;background:var(--surface-2);color:var(--muted);border:1px solid var(--line)}
+
+/* timeline */
+.tl{border-left:2px solid var(--line);margin-left:6px}
+.job{position:relative;padding:0 0 34px 30px}
+.job:last-child{padding-bottom:0}
+.job::before{content:"";position:absolute;left:-7px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+.job.cur::before{background:var(--accent)}
+.job .top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline}
+.job h3{margin:0}
+.job .org{color:var(--muted);font-weight:500}
+.job ul{margin:10px 0 0;padding-left:18px;color:var(--muted);font-size:.96rem}
+.job li{margin-bottom:5px}
+
+/* projects */
+.proj{display:flex;flex-direction:column;transition:transform .15s,box-shadow .15s}
+.proj:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.proj p{flex:1}
+.proj .out{margin-top:12px;font-size:.9rem;color:var(--ink);font-weight:600}
+.proj a.more{margin-top:16px;font-weight:600;font-size:.92rem;color:var(--blue);text-decoration:none}
+.proj a.more:hover{text-decoration:underline}
+
+/* stack */
+.stack dl{display:grid;grid-template-columns:200px 1fr;gap:14px 24px;margin:0}
+.stack dt{font-weight:600}
+.stack dd{margin:0;display:flex;flex-wrap:wrap;gap:6px}
+@media (max-width:720px){.stack dl{grid-template-columns:1fr;gap:6px}.stack dd{margin-bottom:12px}}
+.cert{display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.cert:last-child{border-bottom:0;padding-bottom:0}.cert:first-child{padding-top:0}
+.cert small{color:var(--muted);white-space:nowrap;font-family:var(--mono);font-size:.76rem}
+.cert a{color:var(--blue);text-decoration:none;font-size:.88rem;font-weight:600}
+
+/* about + contact */
+.about{display:grid;grid-template-columns:1.3fr .7fr;gap:18px}
+@media (max-width:860px){.about{grid-template-columns:1fr}}
+.about p{color:var(--muted);margin:0 0 14px}
+.about p:last-child{margin:0}
+.contact{margin:72px 0 0;background:var(--ink);color:var(--bg);border-radius:24px;padding:56px 40px;text-align:center}
+.contact h2{margin:0 0 12px}
+.contact p{opacity:.75;max-width:32em;margin:0 auto 26px}
+.contact .btn{background:transparent;color:var(--bg);border-color:color-mix(in srgb,var(--bg) 30%,transparent)}
+.contact .btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.contact .cta{justify-content:center}
+footer{padding:32px 0 48px;color:var(--muted);font-size:.86rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">dhanush<span>.</span>srinath</a>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#stack">Stack</a>
+      <a href="#about">About</a>
+      <a href="Dhanush_Srinath_Resume.pdf" download>Résumé</a>
+      <button id="theme" aria-label="Toggle light and dark theme">◐</button>
+    </nav>
+  </div>
+</header>
+
+<main id="top" class="wrap">
+
+  <div class="hero">
+    <div>
+      <span class="now"><span class="dot"></span>Data Engineer (R&amp;D) at Kenvue · New York</span>
+      <h1>I build the data layer that <em>decisions</em> stand on.</h1>
+      <p class="lede">I'm Dhanush, a data and analytics engineer. I design data models, build pipelines on Databricks and PostgreSQL, and ship the BI on top, so product, regulatory and marketing teams work from numbers they can trace and trust.</p>
+      <div class="cta">
+        <a class="btn primary" href="#work">See my work →</a>
+        <a class="btn" href="Dhanush_Srinath_Resume.pdf" download>Résumé ↓</a>
+        <a class="btn" href="https://www.linkedin.com/in/dhanush-srinath-ds007/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="mailto:dhanush.srinath@yahoo.com">Email me</a>
+      </div>
+    </div>
+    <div class="pipe" aria-hidden="true">
+      <svg viewBox="0 0 360 300">
+        <text class="lab" x="8" y="16">SOURCES</text>
+        <rect class="n" x="8" y="26" width="96" height="34" rx="8"/><text x="22" y="47">Databricks</text>
+        <rect class="n" x="8" y="70" width="96" height="34" rx="8"/><text x="22" y="91">Veeva</text>
+        <rect class="n" x="8" y="114" width="96" height="34" rx="8"/><text x="22" y="135">SharePoint</text>
+        <rect class="n" x="8" y="158" width="96" height="34" rx="8"/><text x="22" y="179">Excel</text>
+        <path class="flow" d="M104 43 C130 43 124 108 150 108"/>
+        <path class="flow" d="M104 87 C128 87 126 108 150 108"/>
+        <path class="flow" d="M104 131 C128 131 126 108 150 108"/>
+        <path class="flow" d="M104 175 C130 175 124 108 150 108"/>
+        <text class="lab" x="150" y="62">MODEL</text>
+        <rect class="hi" x="150" y="72" width="88" height="72" rx="10"/>
+        <text x="163" y="98">ingest →</text><text x="163" y="114">core →</text><text x="163" y="130">marts</text>
+        <path class="flow" d="M238 108 C254 108 250 56 266 56"/>
+        <path class="flow" d="M238 108 L266 108"/>
+        <path class="flow" d="M238 108 C254 108 250 160 266 160"/>
+        <text class="lab" x="266" y="24">SERVE</text>
+        <rect class="n" x="266" y="38" width="86" height="34" rx="8"/><text x="278" y="59">Power BI</text>
+        <rect class="n" x="266" y="90" width="86" height="34" rx="8"/><text x="278" y="111">KPIs</text>
+        <rect class="n" x="266" y="142" width="86" height="34" rx="8"/><text x="278" y="163">Ad hoc SQL</text>
+        <rect class="n" x="8" y="222" width="344" height="62" rx="10"/>
+        <text class="lab" x="22" y="242">UNDERNEATH ALL OF IT</text>
+        <text x="22" y="264">lineage · data quality · grain checks</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="stats reveal">
+    <div class="stat"><b>5-schema</b><span>normalized PostgreSQL architecture designed at Kenvue</span></div>
+    <div class="stat"><b>$10M</b><span>loyalty program my segmentation work supported</span></div>
+    <div class="stat"><b>40%</b><span>customer-retention lift on that program</span></div>
+    <div class="stat"><b>300+</b><span>endpoints covered by reporting I automated</span></div>
+  </div>
+
+  <section id="what">
+    <div class="head"><div><span class="mono">01 · What I do</span><h2>Engineering through to insight</h2></div></div>
+    <div class="grid3">
+      <div class="card reveal"><span class="num">MODEL</span><h3>Data modeling &amp; architecture</h3><p>Normalized and dimensional models with surrogate keys, business-key constraints and lineage. I reverse-engineer messy source systems into something a team can reason about.</p></div>
+      <div class="card reveal"><span class="num">MOVE</span><h3>Pipelines &amp; data quality</h3><p>ETL in PySpark and SQL on Azure Databricks. I chase down grain violations, duplicate mappings and row explosions before they reach a dashboard.</p></div>
+      <div class="card reveal"><span class="num">SERVE</span><h3>BI people actually use</h3><p>Power BI and Tableau products with real DAX behind them, deployed with scheduled refresh and gateways, then rolled out with training so adoption sticks.</p></div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="head"><div><span class="mono">02 · Selected work</span><h2>What that looks like in practice</h2></div></div>
+
+    <article class="card case reveal">
+      <div>
+        <span class="mono">Kenvue R&amp;D · 2026</span>
+        <h3 style="font-size:1.4rem;margin-top:6px">An auditable 5-schema PostgreSQL foundation</h3>
+        <p>Enterprise analytics needed a base where every fact could be traced back to where it came from. I designed the ERD and a normalized architecture that separates raw ingestion from the governed core and the analytical layers built on it.</p>
+        <ul>
+          <li>Five schemas: ingestion, core, visibility, readiness, accuracy</li>
+          <li>Surrogate keys with business-key uniqueness constraints</li>
+          <li>Lineage carried on facts so loads are auditable end to end</li>
+        </ul>
+        <div class="tags"><span class="tag">PostgreSQL</span><span class="tag">ERD</span><span class="tag">Data lineage</span><span class="tag">Normalization</span></div>
+      </div>
+      <div class="viz" aria-hidden="true">
+        <svg viewBox="0 0 340 210">
+          <rect x="10" y="84" width="84" height="42" rx="8"/><text x="24" y="109">ingestion</text>
+          <rect class="hi" x="128" y="84" width="84" height="42" rx="8"/><text x="155" y="109">core</text>
+          <rect x="246" y="18" width="84" height="42" rx="8"/><text x="258" y="43">visibility</text>
+          <rect x="246" y="84" width="84" height="42" rx="8"/><text x="258" y="109">readiness</text>
+          <rect x="246" y="150" width="84" height="42" rx="8"/><text x="262" y="175">accuracy</text>
+          <line x1="94" y1="105" x2="128" y2="105"/>
+          <path d="M212 105 C230 105 228 39 246 39"/><line x1="212" y1="105" x2="246" y2="105"/><path d="M212 105 C230 105 228 171 246 171"/>
+          <text class="lab" x="10" y="146">raw, as landed</text>
+          <text class="lab" x="128" y="146">keys + constraints</text>
+        </svg>
+      </div>
+    </article>
+
+    <article class="card case reveal">
+      <div>
+        <span class="mono">Kenvue R&amp;D · 2026</span>
+        <h3 style="font-size:1.4rem;margin-top:6px">Product360: one view of claims, regulation and product</h3>
+        <p>Marketing and MLR teams were working across disconnected systems. I engineered the Product360 and Veeva integration architecture in Power BI, giving product-level visibility into claims, regulations, substantiations, formulation mapping and project data.</p>
+        <ul>
+          <li>Integrated Databricks, Veeva, SharePoint and Excel sources</li>
+          <li>Resolved grain violations and row-explosion issues at the model level</li>
+          <li>DAX for distinct claim counts, YTD, status and lifecycle-duration metrics</li>
+          <li>Deployed to Power BI Service with scheduled refresh and gateways</li>
+        </ul>
+        <div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Databricks</span><span class="tag">Veeva</span><span class="tag">SQL</span></div>
+      </div>
+      <div class="viz" aria-hidden="true">
+        <svg viewBox="0 0 340 210">
+          <rect class="hi" x="118" y="80" width="104" height="50" rx="10"/><text x="140" y="110">Product</text>
+          <rect x="10" y="14" width="96" height="36" rx="8"/><text x="36" y="37">Claims</text>
+          <rect x="234" y="14" width="96" height="36" rx="8"/><text x="246" y="37">Regulations</text>
+          <rect x="10" y="160" width="96" height="36" rx="8"/><text x="20" y="183">Formulation</text>
+          <rect x="234" y="160" width="96" height="36" rx="8"/><text x="256" y="183">Projects</text>
+          <rect x="122" y="160" width="96" height="36" rx="8"/><text x="130" y="183">Substantiat.</text>
+          <line x1="106" y1="40" x2="134" y2="80"/><line x1="234" y1="40" x2="206" y2="80"/>
+          <line x1="106" y1="170" x2="134" y2="130"/><line x1="234" y1="170" x2="206" y2="130"/><line x1="170" y1="130" x2="170" y2="160"/>
+        </svg>
+      </div>
+    </article>
+
+    <article class="card case reveal">
+      <div>
+        <span class="mono">Element Technologies · 2024–2025</span>
+        <h3 style="font-size:1.4rem;margin-top:6px">Moving reporting onto Databricks</h3>
+        <p>Led the effort to migrate key reporting assets from Azure and Power BI to Databricks, modernizing the stack while keeping enterprise dashboards for field-force operations and commercial insight running.</p>
+        <ul>
+          <li>Streamlined ETL in PySpark and SQL to cut latency and improve reliability</li>
+          <li>Supported testing, rollout and training for self-service dashboards</li>
+        </ul>
+        <div class="tags"><span class="tag">Azure Databricks</span><span class="tag">PySpark</span><span class="tag">Azure Data Lake</span><span class="tag">Tableau</span></div>
+      </div>
+      <div class="viz" aria-hidden="true">
+        <svg viewBox="0 0 340 210">
+          <text class="lab" x="10" y="22">BEFORE</text>
+          <rect x="10" y="32" width="90" height="34" rx="8"/><text x="22" y="53">Azure SQL</text>
+          <rect x="10" y="78" width="90" height="34" rx="8"/><text x="22" y="99">PBI models</text>
+          <rect x="10" y="124" width="90" height="34" rx="8"/><text x="22" y="145">Extracts</text>
+          <path d="M100 49 C140 49 140 95 180 95"/><line x1="100" y1="95" x2="180" y2="95"/><path d="M100 141 C140 141 140 95 180 95"/>
+          <text class="lab" x="180" y="22">AFTER</text>
+          <rect class="hi" x="180" y="62" width="150" height="66" rx="10"/><text x="198" y="90">Databricks</text><text class="lab" x="198" y="108">one governed lakehouse</text>
+          <rect x="180" y="150" width="150" height="34" rx="8"/><text x="198" y="171">Self-service BI</text>
+          <line x1="255" y1="128" x2="255" y2="150"/>
+        </svg>
+      </div>
+    </article>
+  </section>
+
+  <section id="experience">
+    <div class="head"><div><span class="mono">03 · Experience</span><h2>Where I've worked</h2></div></div>
+    <div class="tl">
+      <div class="job cur reveal">
+        <div class="top"><h3>Data Engineer (R&amp;D) <span class="org">· Kenvue</span></h3><span class="mono">Mar 2026 – Present</span></div>
+        <ul>
+          <li>Design and deliver data engineering, analytics and BI for product, claims, regulatory, marketing and MLR functions.</li>
+          <li>Reverse-engineered complex source systems through metadata analysis, relationship discovery and bridge-table identification to support migration and reporting modernization.</li>
+          <li>Built executive Power BI reporting across Databricks, SharePoint, Veeva and Excel, and run it in production.</li>
+        </ul>
+      </div>
+      <div class="job reveal">
+        <div class="top"><h3>Business Intelligence Analyst <span class="org">· Element Technologies</span></h3><span class="mono">Feb 2024 – Dec 2025</span></div>
+        <ul>
+          <li>Delivered enterprise dashboards in Power BI and Tableau for field-force operations, segmentation and commercial insight.</li>
+          <li>Streamlined ETL with PySpark, SQL and Azure Databricks; led migration of reporting assets to Databricks.</li>
+          <li>Advised leadership on KPI performance and mentored peers.</li>
+        </ul>
+      </div>
+      <div class="job reveal">
+        <div class="top"><h3>Business Intelligence Research Assistant <span class="org">· COLAI</span></h3><span class="mono">Jan 2024 – Oct 2024</span></div>
+        <ul>
+          <li>Analyzed GPU performance, supplier metrics and training costs behind LLM and time-series research.</li>
+          <li>Built Tableau and Power BI dashboards for vendor benchmarking and helped shape a service model for fine-tuned LLMs.</li>
+        </ul>
+      </div>
+      <div class="job reveal">
+        <div class="top"><h3>Business Analyst <span class="org">· Northeastern University</span></h3><span class="mono">Sep 2022 – Dec 2023</span></div>
+        <ul>
+          <li>Built predictive models and donor segmentation in Python for university fundraising, improving model accuracy by 15%.</li>
+          <li>Led customer segmentation for JCD Fashion Retail supporting a $10M loyalty program and a 40% retention increase.</li>
+        </ul>
+      </div>
+      <div class="job reveal">
+        <div class="top"><h3>Data Security &amp; Infrastructure Analyst <span class="org">· Aurigo Software Technologies</span></h3><span class="mono">Jan 2022 – Sep 2022</span></div>
+        <ul>
+          <li>Automated daily and weekly security reporting across 300+ IP addresses and six production servers in the US and Canada.</li>
+          <li>Identified and mitigated 10+ vulnerabilities through weekly CrowdStrike Falcon and Qualys scans.</li>
+        </ul>
+      </div>
+      <div class="job reveal">
+        <div class="top"><h3>Earlier <span class="org">· SJCE-STEP and Avyaya</span></h3><span class="mono">2018 – 2021</span></div>
+        <ul><li>Business Intelligence Analyst at SJCE Science &amp; Technology Entrepreneurs Park, and a data analyst internship at Avyaya Integrated Brand Solutions.</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="head"><div><span class="mono">04 · Projects</span><h2>Things I've built along the way</h2></div></div>
+    <div class="grid3">
+      <article class="card proj reveal">
+        <span class="num">CAPSTONE</span><h3>Northeastern Fundraising</h3>
+        <p>Predictive modeling and donor segmentation on university giving data, with Power BI and Tableau dashboards of donor behavior and demographics.</p>
+        <div class="out">Model accuracy up 15%</div>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Power BI</span><span class="tag">SQL</span></div>
+        <a class="more" href="http://tinyurl.com/56eu2yer" target="_blank" rel="noopener">View project →</a>
+      </article>
+      <article class="card proj reveal">
+        <span class="num">SEGMENTATION</span><h3>JCD Retail Loyalty</h3>
+        <p>Clustering plus logistic and linear regression on loyalty-program data to find high-value segments, build personas and a model for targeting.</p>
+        <div class="out">$10M program · 40% retention lift</div>
+        <div class="tags"><span class="tag">Python</span><span class="tag">R</span><span class="tag">Clustering</span></div>
+        <a class="more" href="http://tinyurl.com/ywse77wy" target="_blank" rel="noopener">View project →</a>
+      </article>
+      <article class="card proj reveal">
+        <span class="num">GEOSPATIAL</span><h3>RedEye Campus Safety</h3>
+        <p>Cleaned and mapped boston.gov crime data around Northeastern to re-prioritize coverage areas for the RedEye late-night safety ride service.</p>
+        <div class="out">Priority zones identified by time and place</div>
+        <div class="tags"><span class="tag">GeoPandas</span><span class="tag">Matplotlib</span><span class="tag">Python</span></div>
+        <a class="more" href="http://tinyurl.com/bdeumw36" target="_blank" rel="noopener">View project →</a>
+      </article>
+      <article class="card proj reveal">
+        <span class="num">NLP · PUBLISHED</span><h3>Quest Zeal</h3>
+        <p>An AI question-and-answer system that generates and evaluates exam questions from course material, built as a low-cost alternative to traditional examinations.</p>
+        <div class="out">Published in IRJET</div>
+        <div class="tags"><span class="tag">PyTorch</span><span class="tag">NLP</span><span class="tag">Flask</span></div>
+        <a class="more" href="https://github.com/dhoniobond/Quest_Zeal" target="_blank" rel="noopener">Code on GitHub →</a>
+      </article>
+      <article class="card proj reveal">
+        <span class="num">HEALTH</span><h3>Heart-Risk Indicators</h3>
+        <p>Analysis of the key indicators associated with heart disease, the leading cause of death in the United States, to inform prevention and management.</p>
+        <div class="out">Indicator analysis and dashboard</div>
+        <div class="tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Power BI</span></div>
+      </article>
+      <article class="card proj reveal">
+        <span class="num">DATABASE</span><h3>E-commerce Data Model</h3>
+        <p>A normalized relational design for an e-commerce platform, from entity-relationship model through to a working MySQL schema.</p>
+        <div class="out">ER model to MySQL</div>
+        <div class="tags"><span class="tag">MySQL</span><span class="tag">ERD</span><span class="tag">Normalization</span></div>
+        <a class="more" href="http://tinyurl.com/3yskp3nb" target="_blank" rel="noopener">View project →</a>
+      </article>
+    </div>
+  </section>
+
+  <section id="stack">
+    <div class="head"><div><span class="mono">05 · Stack</span><h2>Tools and credentials</h2></div></div>
+    <div class="grid2">
+      <div class="card stack reveal">
+        <dl>
+          <dt>Languages</dt><dd><span class="tag">SQL</span><span class="tag">Python</span><span class="tag">PySpark</span><span class="tag">R</span><span class="tag">DAX</span></dd>
+          <dt>Platforms</dt><dd><span class="tag">Azure Databricks</span><span class="tag">Microsoft Fabric</span><span class="tag">PostgreSQL</span><span class="tag">Azure Data Lake</span></dd>
+          <dt>Modeling</dt><dd><span class="tag">Dimensional</span><span class="tag">Normalized</span><span class="tag">ERD</span><span class="tag">Lineage</span><span class="tag">Migration</span></dd>
+          <dt>BI</dt><dd><span class="tag">Power BI</span><span class="tag">Power Query</span><span class="tag">Tableau</span><span class="tag">Excel</span></dd>
+          <dt>Sources</dt><dd><span class="tag">Veeva</span><span class="tag">SharePoint</span></dd>
+        </dl>
+      </div>
+      <div class="card reveal">
+        <div class="cert"><div><b>Microsoft Certified: Fabric Analytics Engineer</b><br><a href="https://learn.microsoft.com/api/credentials/share/en-in/DhanushSrinath-0521/E68D3E2B4646CF62?sharingId=78A56A4415DF4738" target="_blank" rel="noopener">Verify credential →</a></div><small>2024 – 2028</small></div>
+        <div class="cert"><div><b>Databricks Certified Data Engineer Associate</b></div><small>2024 – 2026</small></div>
+        <div class="cert"><div><b>Qualys Certified Specialist</b></div><small>2022</small></div>
+        <div class="cert"><div><b>Google Cloud: Data, ML and AI tasks · BigQuery insights</b></div><small>2020</small></div>
+        <div class="cert"><div><b>MS, Business Analytics</b><br><span style="color:var(--muted);font-size:.92rem">Northeastern University, D'Amore-McKim School of Business</span></div><small>Boston</small></div>
+        <div class="cert"><div><b>BE, Computer Science</b><br><span style="color:var(--muted);font-size:.92rem">JSS Science and Technology University (SJCE)</span></div><small>Mysore</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="head"><div><span class="mono">06 · About</span><h2>The person behind the pipelines</h2></div></div>
+    <div class="about">
+      <div class="card reveal">
+        <p>I started in computer science in Mysore, spent a year in cloud security watching what happens when data isn't trustworthy, then moved to Boston for a master's in business analytics. That mix is why I care about both halves of the job: the engineering that makes data correct, and the storytelling that makes it useful.</p>
+        <p>I believe numbers should be more interesting than figures you crunch on a screen. The best compliment a model of mine can get is that nobody has to ask where a number came from.</p>
+      </div>
+      <div class="card reveal">
+        <span class="num">OFF THE CLOCK</span>
+        <p>Swimming, and football (no, it's not called soccer). Real Madrid is my club, and not as a glory hunter: it's the never-give-up comebacks I try to bring to my own work.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="contact reveal">
+    <h2>Have a data problem worth solving?</h2>
+    <p>I'm always glad to talk data modeling, Databricks, or how to make a dashboard people trust.</p>
+    <div class="cta">
+      <a class="btn primary" href="mailto:dhanush.srinath@yahoo.com">dhanush.srinath@yahoo.com</a>
+      <a class="btn" href="https://www.linkedin.com/in/dhanush-srinath-ds007/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+      <a class="btn" href="Dhanush_Srinath_Resume.pdf" download>Download résumé</a>
+    </div>
+  </div>
+
+  <footer>
+    <span>© 2026 Dhanush Srinath · New York</span>
+    <span><a href="#top">Back to top ↑</a></span>
+  </footer>
+</main>
+
+<script>
+(function(){
+  var root=document.documentElement,key='ds-theme';
+  try{var s=localStorage.getItem(key);if(s)root.setAttribute('data-theme',s);}catch(e){}
+  document.getElementById('theme').addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+    var next=cur==='dark'?'light':'dark';root.setAttribute('data-theme',next);
+    try{localStorage.setItem(key,next);}catch(e){}
+  });
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.08});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>
